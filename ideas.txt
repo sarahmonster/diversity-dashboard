@@ -1,0 +1,41 @@
+Stats/data we have:
+
+- % women engineers, probably out-of-date: https://github.com/triketora/women-in-software-eng/blob/master/data.txt
+
+num_female_eng: 14
+num_eng: 198
+last_updated: 2016-06-29
+
+- location data (via Matticspace)
+- languages spoken (via Matticspace)
+
+other demos may need to be submitted via a form, because we can't really collect via matticspace
+
+Stats we should show:
+
+GENDER
+
+bar/pie chart; tabs/filters for all/technical/leadership
+
+ETHNICITY
+
+pie chart?
+filter by country, role, gender(?)
+
+AGE
+- average & median ages
+
+LOCATION/LANGUAGE/RELIGION
+
+(map?)
+
+x countries
+x languages spoken
+x religions practised
+
+LGBTQ
+
+DIFFERENTLY-ABLED/NEURO-DIVERSE
+
+consider deltas and y-o-y changes + how
+compare to overall population (particularly in america!) 
