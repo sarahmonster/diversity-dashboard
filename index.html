@@ -8,7 +8,12 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
+	<!-- Load c3.css -->
+	<link href="css/c3.css" rel="stylesheet" type="text/css">
+
+	<!-- Load d3.js and c3.js -->
+	<script src="https://d3js.org/d3.v3.js"></script>
+	<script src="js/c3.min.js"></script>
 	<script src="js/charts.js"></script>
 </head>
 
@@ -16,7 +21,8 @@
 
 	<h1>Hello!</h1>
 
-	<canvas id="myChart" width="400" height="400" style="max-width: 400px"></canvas>
+	<div id="ethnicityChart"></div>
+
 
 
 </body>
