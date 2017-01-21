@@ -1,16 +1,10 @@
 window.onload = function() {
-	var chart = c3.generate({
+	var ethnicityChart = c3.generate({
 		bindto: '#ethnicityChart',
 		data: {
-			columns: [
-				['White', 300],
-				['Latinx/Hispanic', 47],
-				['Black', 12],
-				['Asian', 29],
-				['Multiracial', 10],
-				['Other/prefer not to say', 18]
-			],
-			type: 'donut',
+			url: 'data/ethnicity.json',
+			mimeType: 'json',
+			type: 'donut'
 		},
 		donut: {
 			title: "Ethnicity",
@@ -27,4 +21,18 @@ window.onload = function() {
 			}
 		}
 	});
+
+	var filter = document.getElementById( 'filter' );
+
+	filter.onclick = function() {
+		setTimeout(function () {
+			ethnicityChart.load({
+				//unload: true,
+				url: 'data/ethnicity-technical.json',
+				mimeType: 'json'
+			});
+		}, 500);
+	};
+
+
 };
