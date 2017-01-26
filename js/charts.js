@@ -22,17 +22,33 @@ window.onload = function() {
 		}
 	});
 
-	var filter = document.getElementById( 'filter' );
 
-	filter.onclick = function() {
-		setTimeout(function () {
+	function loadNewChartData(event) {
+		var source = event.currentTarget.dataset.source;
+		setTimeout(function() {
 			ethnicityChart.load({
 				//unload: true,
-				url: 'data/ethnicity-technical.json',
+				url: 'data/' + source + '.json',
 				mimeType: 'json'
 			});
 		}, 500);
+	}
+
+	var filters = document.getElementsByClassName( 'filter' );
+
+	for (var i = 0; i < filters.length; i++) {
+		// one way
+		filters[i].addEventListener('click', loadNewChartData, false);
+	}
+
+
+// add event listener to element
+
+	/*
+	filter.onclick = function() {
+
 	};
+	*/
 
 
 };
