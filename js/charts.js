@@ -1,7 +1,11 @@
 (function( $ ){
 
 	window.onload = function() {
-		var ethnicityChart = c3.generate({
+		var charts = {
+			ethnicity: null,
+			gender: null,
+		}
+		charts.ethnicity = c3.generate({
 			bindto: '#ethnicityChart',
 			data: {
 				url: 'data/ethnicity.json',
@@ -9,7 +13,7 @@
 				type: 'bar'
 			},
 			axis: {
-				rotated: true,
+				rotated: false,
 				x: {
 					show: false,
 					label: {
@@ -19,11 +23,14 @@
 					tick: {
 						outer: false
 					}
+				},
+				y: {
+					show: false,
 				}
 			},
 			bar: {
 				width: {
-					ratio: 0.8
+					ratio: 0.9
 				}
 			},
 			legend: {
@@ -38,7 +45,7 @@
 			}
 		});
 
-		var genderChart = c3.generate({
+		charts.gender = c3.generate({
 			bindto: '#genderChart',
 			data: {
 				url: 'data/gender.json',
@@ -69,13 +76,12 @@
 			$(filterLink).addClass( 'active' );
 			var source = event.currentTarget.dataset.source;
 			var chart = event.currentTarget.dataset.chart;
-			setTimeout(function() {
-				ethnicityChart.load({
-					//unload: true,
-					url: 'data/' + source + '.json',
-					mimeType: 'json'
-				});
-			}, 500);
+
+			charts[chart].load({
+				//unload: true,
+				url: 'data/' + source + '.json',
+				mimeType: 'json'
+			});
 		}
 
 
@@ -86,6 +92,8 @@
 		for (var i = 0; i < filters.length; i++) {
 			filters[i].addEventListener('click', loadNewChartData, false);
 		}
+
+
 
 	};
 
