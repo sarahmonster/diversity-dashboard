@@ -32,6 +32,7 @@ section {
 .card {
 	background: #fff;
 	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+	margin-bottom: 40px;
 	padding: 10px 20px 20px;
 }
 
@@ -67,7 +68,7 @@ section {
 	border-bottom: 1px solid;
 }
 
-/* Charts */
+/* Doughnut Charts */
 .c3-chart-arcs-title {
 	font-size: 16px;
 	font-weight: 500;
@@ -78,5 +79,11 @@ section {
 }
 
 .c3-chart-arc path {
+	stroke-width: 4px;
+}
+
+/* Bar Charts */
+.c3-bar {
+	stroke: #fff !important;
 	stroke-width: 4px;
 }

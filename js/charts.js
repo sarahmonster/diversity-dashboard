@@ -6,10 +6,47 @@
 			data: {
 				url: 'data/ethnicity.json',
 				mimeType: 'json',
+				type: 'bar'
+			},
+			axis: {
+				rotated: true,
+				x: {
+					show: false,
+					label: {
+						text: 'Ethnicity',
+						position: 'outer-center'
+					},
+					tick: {
+						outer: false
+					}
+				}
+			},
+			bar: {
+				width: {
+					ratio: 0.8
+				}
+			},
+			legend: {
+				position: 'right'
+			},
+			tooltip: {
+				format: {
+					value: function (value, ratio, id) {
+						return value;
+					}
+				}
+			}
+		});
+
+		var genderChart = c3.generate({
+			bindto: '#genderChart',
+			data: {
+				url: 'data/gender.json',
+				mimeType: 'json',
 				type: 'donut'
 			},
 			donut: {
-				title: "Ethnicity",
+				title: "Gender",
 				width: 80
 			},
 			legend: {
@@ -25,11 +62,13 @@
 		});
 
 		// Load new chart data.
-		function loadNewChartData(event) {
+		function loadNewChartData( event ) {
+			event.preventDefault();
 			var filterLink = event.currentTarget;
 			$(filterLink).siblings().removeClass( 'active' );
 			$(filterLink).addClass( 'active' );
 			var source = event.currentTarget.dataset.source;
+			var chart = event.currentTarget.dataset.chart;
 			setTimeout(function() {
 				ethnicityChart.load({
 					//unload: true,
@@ -47,6 +86,7 @@
 		for (var i = 0; i < filters.length; i++) {
 			filters[i].addEventListener('click', loadNewChartData, false);
 		}
+
 	};
 
 })( jQuery );

@@ -28,14 +28,27 @@
 		<p>We are an international company with employees who come from a wide variety of backgrounds. We believe that the more perspectives we embrace, the better we are at engaging our global community of users and developers. We want to build Super Widget Company as an environment where people love their work and show respect and empathy to those with whom we interact.</p>
 	</section>
 
-	<section class="card">
+	<section class="gender card">
 		<div class="card-header">
-			<h2 class="card-title">Race &amp; Ethnicity</h2>
+			<h2 class="card-title">Gender</h2>
 			<div class="filters">
 				Filter by role:
-				<a href="#" class="filter active" data-source="ethnicity">All</a>
-				<a href="#" class="filter" data-source="ethnicity-technical">Technical</a>
-				<a href="#" class="filter" data-source="ethnicity-leadership">Leadership</a>
+				<a href="#" class="filter active" data-chart="genderChart" data-source="gender">All</a>
+				<a href="#" class="filter" data-chart="genderChart" data-source="gender-technical">Technical</a>
+				<a href="#" class="filter" data-chart="genderChart" data-source="gender-leadership">Leadership</a>
+			</div>
+		</div>
+		<div id="genderChart"></div>
+	</section>
+
+	<section class="ethnicity card">
+		<div class="card-header">
+			<h2 class="card-title">Ethnicity</h2>
+			<div class="filters">
+				Filter by role:
+				<a href="#" class="filter active" data-chart="ethnicityChart" data-source="ethnicity">All</a>
+				<a href="#" class="filter" data-chart="ethnicityChart" data-source="ethnicity-technical">Technical</a>
+				<a href="#" class="filter" data-chart="ethnicityChart" data-source="ethnicity-leadership">Leadership</a>
 			</div>
 		</div>
 		<div id="ethnicityChart"></div>
