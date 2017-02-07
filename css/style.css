@@ -6,13 +6,15 @@ body,
 
 :root {
 	--main-bg-color: #eee;
+	--text-color: #333;
 	--accent-color: #39c;
-	--inactive-tab-color: #aaa;
-	--active-tab-color: #666;
+	--neutral-color: #888;
+	--active-tab-color: #1b74a5;
 }
 
 body {
 	background: var(--main-bg-color);
+	color: var(--text-color);
 }
 
 a {
@@ -37,9 +39,6 @@ section {
 }
 
 .card-header {
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
 	padding-bottom: 20px;
 }
 
@@ -55,17 +54,34 @@ section {
 
 /* Filter links */
 .filters {
-	display: inline-block;
+	border-bottom: 0.5px solid var(--neutral-color);
+	color: var(--neutral-color);
+	padding: 0 0 10px;
+	margin: -10px auto 10px;
+	text-align: center;
+	width: fit-content;
+	width: -moz-fit-content;
+}
+
+.filters span {
+	color: var(--text-color);
+	display: block;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	padding-bottom: 10px;
+	letter-spacing: 0.05em;
+	font-weight: 500;
 }
 
 .filters a {
-	color: var(--inactive-tab-color);
+	color: var(--neutral-color);
+	padding: 9px 20px;
 	text-decoration: none;
 }
 
 .filters a.active {
 	color: var(--active-tab-color);
-	border-bottom: 1px solid;
+	border-bottom: 2px solid;
 }
 
 /* Doughnut Charts */
